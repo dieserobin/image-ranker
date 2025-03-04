@@ -8,9 +8,9 @@ from io import StringIO
 import threading
 import logging
 from datetime import datetime
-import tkinter as tk
-from tkinter import filedialog
-import platform
+# import tkinter as tk
+# from tkinter import filedialog
+# import platform
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -58,7 +58,7 @@ def initialize_image_pairs(a=False):
     # (r) 03.2024 we should be able to shorten this
     # combine unique pairs and randomize sequence in list within tuple
     # image_paths = [path for path in image_paths if path not in excluded_images]
-    # image_pairs = itertools.combine(image_paths, 2) # all possible pairs
+    # image_pairs = list(itertools.combine(image_paths, 2)) # all possible pairs
     # image_pairs = [(a, b) if random.random() < 0.5 else (b, a) for a, b in image_pairs] # flip tuples
     # random.shuffle(image_pairs)
     
