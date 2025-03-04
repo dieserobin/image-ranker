@@ -54,6 +54,13 @@ def initialize_image_pairs(a=False):
         return
         
     app.logger.debug(f"Initializing pairs with {len(image_paths)} images")
+
+    # (r) 03.2024 we should be able to shorten this
+    # combine unique pairs and randomize sequence in list within tuple
+    # image_paths = [path for path in image_paths if path not in excluded_images]
+    # image_pairs = itertools.combine(image_paths, 2) # all possible pairs
+    # image_pairs = [(a, b) if random.random() < 0.5 else (b, a) for a, b in image_pairs] # flip tuples
+    # random.shuffle(image_pairs)
     
     n = len(image_paths)
     initial_pairs = []
@@ -65,7 +72,8 @@ def initialize_image_pairs(a=False):
     
     random.shuffle(initial_pairs)
     remaining_pairs = list(itertools.combinations(image_paths, 2))
-    remaining_pairs = [pair for pair in remaining_pairs if pair not in initial_pairs]
+    remaining_pairs = [pair for pair in remaining_pairs if pair not in initial_pairs] 
+    # why remove initial pairs? this would remove (A, B) but leave (B, A)
     
     app.logger.debug(f"Created {len(remaining_pairs)} remaining pairs")
     
