@@ -1,9 +1,25 @@
+## Robinary
+
+APP
+
+- fix image folder selection from location other than project root folder
+- timestamp choices for psychometrics
+- Simple reset / reload that restarts the whole thing… should work on loading new directory
+
+HTML/CSS
+
+- dark mode
+- larger images
+- click on image as alternative to click on button
+
 ## Primary
+
 - Best of four ranking option instead of 1v1.
 - Import corresponding text-prompts for each image.
 - Regularly save the ranking file in case there is some error.
 
 ## Secondary
+
 - Undo button.
 - Add loading screen for when a directory with a lot of images is loaded in.
 - Automatically annotate/describe/generate text prompts for the images using a (multi-modal) vision model.
